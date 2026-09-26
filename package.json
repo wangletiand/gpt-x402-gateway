@@ -1,12 +1,17 @@
 {
   "name": "gpt-x402-gateway",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Production x402 AI micro-services & Model Context Protocol (MCP) gateway powered by GPT-6 on Base USDC.",
   "type": "module",
   "main": "client.mjs",
   "bin": {
     "gpt-x402": "bin/cli.mjs",
     "gpt-x402-gateway": "bin/cli.mjs"
+  },
+  "exports": {
+    ".": "./client.mjs",
+    "./eliza": "./adapters/elizaos/index.mjs",
+    "./agentkit": "./adapters/agentkit/index.mjs"
   },
   "scripts": {
     "start": "node client.mjs stdio",
@@ -22,7 +27,11 @@
     "usdc",
     "gpt-6",
     "agentic-commerce",
-    "ai-agents"
+    "ai-agents",
+    "elizaos",
+    "agentkit",
+    "prompt-injection",
+    "wallet-guard"
   ],
   "author": "wangletiand",
   "license": "MIT",
