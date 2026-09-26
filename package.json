@@ -1,14 +1,17 @@
 {
   "name": "gpt-x402-gateway",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production x402 AI micro-services & Model Context Protocol (MCP) gateway powered by GPT-6 on Base USDC.",
   "type": "module",
   "main": "client.mjs",
   "bin": {
-    "gpt-x402": "bin/cli.mjs"
+    "gpt-x402": "bin/cli.mjs",
+    "gpt-x402-gateway": "bin/cli.mjs"
   },
   "scripts": {
-    "start": "node client.mjs list",
+    "start": "node client.mjs stdio",
+    "stdio": "node client.mjs stdio",
+    "list": "node client.mjs list",
     "test": "node client.mjs quote /v1/x402-ping"
   },
   "keywords": [

@@ -1,0 +1,361 @@
+[
+  {
+    "name": "agent_architect",
+    "description": "[Price: $3.00 Base USDC via x402] Complete autonomous agent architecture synthesis using GPT-6. Generates system prompt, tool definitions, memory hierarchy, state machine, and error recovery strategies.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "goal": {
+          "type": "string",
+          "description": "The mission/goal of the agent system"
+        },
+        "requirements": {
+          "type": "string",
+          "description": "Resilience, tool or runtime requirements"
+        },
+        "techStack": {
+          "type": "string",
+          "description": "Language and stack (e.g. Node.js, Python)"
+        }
+      },
+      "required": [
+        "goal"
+      ]
+    }
+  },
+  {
+    "name": "chat_pro",
+    "description": "[Price: $0.05 Base USDC via x402] Enhanced AI chat completions with optimized system prompts, structured output support, and multi-model routing. OpenAI-compatible.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "User message or query"
+        },
+        "systemPrompt": {
+          "type": "string",
+          "description": "Optional system instructions"
+        },
+        "model": {
+          "type": "string",
+          "description": "gpt-6-sol or gpt-6-astra"
+        }
+      },
+      "required": [
+        "message"
+      ]
+    }
+  },
+  {
+    "name": "audit_code",
+    "description": "[Price: $1.50 Base USDC via x402] Deep code audit covering security vulnerabilities, code quality, performance issues, and best practices. Returns structured report with severity ratings.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Source code to audit"
+        },
+        "language": {
+          "type": "string",
+          "description": "Programming language"
+        },
+        "context": {
+          "type": "string",
+          "description": "Framework or project context"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    }
+  },
+  {
+    "name": "audit_contract",
+    "description": "[Price: $2.50 Base USDC via x402] Exhaustive smart contract & DeFi protocol audit using GPT-6. Detects reentrancy, oracle manipulation, arithmetic flaws, flash loan vulnerabilities, access control holes, and EIP compliance.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "contractCode": {
+          "type": "string",
+          "description": "Solidity or smart contract code to audit"
+        },
+        "protocolType": {
+          "type": "string",
+          "description": "EVM/Solidity, Solana/Rust, etc."
+        },
+        "context": {
+          "type": "string",
+          "description": "Protocol business logic or tokenomics context"
+        }
+      },
+      "required": [
+        "contractCode"
+      ]
+    }
+  },
+  {
+    "name": "data_insights",
+    "description": "[Price: $1.00 Base USDC via x402] Analyze structured data (CSV, JSON, tables) and produce statistical insights, trends, anomalies, and actionable recommendations.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string",
+          "description": "CSV, JSON array, or tabular text"
+        },
+        "question": {
+          "type": "string",
+          "description": "Specific analytical question to answer"
+        }
+      },
+      "required": [
+        "data"
+      ]
+    }
+  },
+  {
+    "name": "deep_research",
+    "description": "[Price: $2.00 Base USDC via x402] Multi-turn deep research report on any topic using GPT-6. Returns structured analysis with key findings, evidence, and actionable recommendations.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "type": "string",
+          "description": "The research topic or question to investigate"
+        },
+        "depth": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "deep"
+          ],
+          "description": "standard (1500w) or deep (3000w)"
+        },
+        "language": {
+          "type": "string",
+          "description": "Report language (en, zh, es, etc.)"
+        }
+      },
+      "required": [
+        "topic"
+      ]
+    }
+  },
+  {
+    "name": "doc_summary",
+    "description": "[Price: $0.50 Base USDC via x402] Intelligent document summarization with key points, keywords, and structured extraction. Supports any text document.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Document text to summarize"
+        },
+        "length": {
+          "type": "string",
+          "enum": [
+            "short",
+            "medium",
+            "long"
+          ]
+        }
+      },
+      "required": [
+        "text"
+      ]
+    }
+  },
+  {
+    "name": "translate_pro",
+    "description": "[Price: $0.30 Base USDC via x402] Professional-grade translation with terminology consistency, tone preservation, and optional glossary support.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text to translate"
+        },
+        "to": {
+          "type": "string",
+          "description": "Target language (e.g. English, Chinese, Japanese)"
+        },
+        "from": {
+          "type": "string",
+          "description": "Source language (default: auto)"
+        }
+      },
+      "required": [
+        "text",
+        "to"
+      ]
+    }
+  },
+  {
+    "name": "extract_schema",
+    "description": "[Price: $0.50 Base USDC via x402] Extracts high-fidelity JSON data conforming strictly to your JSON Schema from messy raw text, HTML, or unformatted data using GPT-6.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "Raw text, HTML, or unstructured content to extract from"
+        },
+        "schema": {
+          "type": "object",
+          "description": "Target JSON Schema describing the desired fields and types"
+        },
+        "instructions": {
+          "type": "string",
+          "description": "Special extraction guidelines or formatting requirements"
+        }
+      },
+      "required": [
+        "content"
+      ]
+    }
+  },
+  {
+    "name": "guard_prompt",
+    "description": "[Price: $0.05 Base USDC via x402] Real-time prompt injection firewall and jailbreak detector for autonomous agents. Sanitizes untrusted user inputs from social feeds or web scrapers using GPT-6.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Untrusted input string to analyze and sanitize"
+        },
+        "agentRole": {
+          "type": "string",
+          "description": "Target agent role description"
+        },
+        "sensitivity": {
+          "type": "string",
+          "enum": [
+            "LOW",
+            "MEDIUM",
+            "HIGH"
+          ],
+          "description": "Firewall sensitivity level"
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  },
+  {
+    "name": "guard_tx",
+    "description": "[Price: $0.15 Base USDC via x402] Pre-transaction safety analyzer and calldata decoder for autonomous agents. Evaluates smart contracts, approvals, drainers, and malicious traps using GPT-6 before on-chain execution.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "type": "string",
+          "description": "Target contract or recipient address"
+        },
+        "data": {
+          "type": "string",
+          "description": "Transaction calldata hex (0x...)"
+        },
+        "value": {
+          "type": "string",
+          "description": "Native currency value in wei"
+        },
+        "chainId": {
+          "type": "number",
+          "description": "Target chain ID (e.g. 8453 for Base)"
+        },
+        "context": {
+          "type": "string",
+          "description": "Optional intent or user context"
+        }
+      },
+      "required": [
+        "to"
+      ]
+    }
+  },
+  {
+    "name": "chat_completions",
+    "description": "[Price: $0.05 Base USDC via x402] Direct OpenAI-compatible /v1/chat/completions endpoint supporting gpt-6-sol, gpt-6-astra, gpt-5.6, and more. Plug-and-play for any AI SDK or Agent.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string",
+          "description": "Model ID: gpt-6-sol (default), gpt-6-astra, deepseek-chat"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": {
+                "type": "string",
+                "enum": [
+                  "system",
+                  "user",
+                  "assistant"
+                ]
+              },
+              "content": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "role",
+              "content"
+            ]
+          },
+          "description": "Conversation messages array"
+        },
+        "temperature": {
+          "type": "number"
+        },
+        "max_tokens": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "messages"
+      ]
+    }
+  },
+  {
+    "name": "ping_probe",
+    "description": "[Price: $0.00 Base USDC via x402] Canary ping and health verification endpoint for x402 networks and buyers ($0.002 USDC).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "content_seo",
+    "description": "[Price: $0.80 Base USDC via x402] Generate SEO-optimized long-form content with meta tags, headings structure, keyword integration, and readability optimization.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "type": "string",
+          "description": "Article topic or target title"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Target SEO keywords"
+        },
+        "wordCount": {
+          "type": "number",
+          "description": "Target word count (e.g. 1500)"
+        }
+      },
+      "required": [
+        "topic"
+      ]
+    }
+  }
+]

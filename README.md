@@ -51,10 +51,17 @@ Connect Claude Desktop, Cursor, or any MCP client directly to this gateway:
   "mcpServers": {
     "gpt-x402": {
       "command": "npx",
-      "args": ["-y", "gpt-x402-gateway", "mcp"]
+      "args": ["-y", "gpt-x402-gateway", "stdio"]
     }
   }
 }
+```
+
+### Docker Usage
+
+```bash
+docker build -t gpt-x402-gateway .
+docker run -i --rm gpt-x402-gateway
 ```
 
 Or connect via remote HTTP:
@@ -74,6 +81,9 @@ npx gpt-x402-gateway quote /v1/x402-ping
 
 # Inspect transaction guard quote
 npx gpt-x402-gateway quote /v1/guard/tx
+
+# Run as local MCP server
+npx gpt-x402-gateway stdio
 ```
 
 ---
