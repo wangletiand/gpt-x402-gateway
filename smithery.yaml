@@ -1,0 +1,6 @@
+startCommand:
+  type: "http"
+  url: "https://gpt.558686.xyz/mcp"
+configSchema:
+  type: "object"
+  properties: {}
